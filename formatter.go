@@ -2,6 +2,7 @@ package main
 
 import ( 
 	"strings" 
+	"fmt"
 )
 	func divideString(str string) (string, string) {
 		newString:=str[:20]
@@ -11,50 +12,58 @@ import (
 
 
 
-func format(fullString string) string{
 
-// Your original string
-//fullString := "hello my name is not alksdlkf aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa something that you would want to know but for me it is the most important thing out therea"
+func main(){ 
+	inputString:="Hello there I want to tell you that there exists a buch of stuff that I don't want to talk about like this alksjdflkjasl dkfjlaksjdlfkjalskdjflaksjdlfkajsldkjflaksjdlf "
 
-outString := ""
+	//inputString:= "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a"
+	lineLength:=0
+	maxLineLength:=20
+	tempString:=""
+ 	words := strings.Fields(inputString)
+	mySlice := []string{}
 
-	// Split the string into words
-	words := strings.Fields(fullString)
-
-	linelength:=0
-
+	
 	for i:=0; i<len(words); i++{
-		linelength+=len(words[i])
-		if linelength>=20{
+		lineLength+=len(words[i])
+		
+		if (lineLength>=maxLineLength){
+			//The case in which the length of the word is more than max line length
+			if(len(words[i])>maxLineLength){
+				divide:=float64(len(words[i]))/float64(maxLineLength)
+				mySlice=append(mySlice, tempString); tempString="";
+				
 
-			if len(words[i])>20{
-				word:=words[i]
-				for len(word)>20{
-					var add string;
-					add, word = divideString(word)
-					outString+="\n"
-					outString+="' "
-					outString+=add
-					if(len(word)<20){
-						outString+="\n"
-						outString+="' "
-						outString+=word
-						outString+=" "
-						linelength=len(word)
-					}else{linelength=0}
+				for y:=0; y<int(divide);y++{
+					begin:=maxLineLength*y
+					end:=maxLineLength*(y+1)
+					mySlice=append(mySlice, words[i][begin:end])
 				}
+				temp:=int(divide)*maxLineLength
+
+				tempString+=words[i][temp:]
+				lineLength=len(words[i])-(maxLineLength*int(divide))
+				continue
+
 			}else{
-			outString+="\n"
-			outString+="' "
-			linelength=0
+				mySlice=append(mySlice, tempString); tempString="";
+				lineLength=len(words[i]);
+			}
+
+
 		}
-		}else{
-		outString+=words[i]
-		outString+=" "
+
+		tempString+=words[i]; tempString+=" ";
+
+
 	}
+	mySlice=append(mySlice, tempString);
+
+
+	for i:=0;i<len(mySlice);i++{
+		fmt.Println(mySlice[i])
 	}
 
-	//fmt.Println(outString)
-	return outString
 
 }
+
