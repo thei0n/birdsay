@@ -23,6 +23,6 @@ mySlice:=format(inputString)
 for i:=0;i<len(mySlice);i++{
 	fmt.Printf("|    %s    |\n", mySlice[i])
 }
-	bat()
+	bird()
 }
 

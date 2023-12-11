@@ -1,3 +1,3 @@
-module batsay
+module birdsay
 
 go 1.21.4

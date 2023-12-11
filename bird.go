@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func bat(){
+func bird(){
 fmt.Println("|				  |	 _________")
 fmt.Println("|				  |	/_  ___   \\")
 fmt.Println("'                                .     /@ \\/@  \\   \\") 
