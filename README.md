@@ -12,7 +12,7 @@ Nothing serious, just some simple go code.
 
 
 ```
-git clone https://github.com/thei0n/batsay
+git clone https://github.com/thei0n/birdsay
 ```
 
 ``` 
