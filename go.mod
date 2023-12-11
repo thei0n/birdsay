@@ -1,3 +1,3 @@
-module cloud
+module batsay
 
 go 1.21.4
