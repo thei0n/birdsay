@@ -1,31 +1,28 @@
 package main
 
-import "fmt"
-import "os"
-import "io/ioutil"
-
-var print = fmt.Println
-var printf=fmt.Printf
+import 
+(
+	"fmt"
+	"os"
+)
 
 func main(){
-
+	
+	//Turning positional arguments into a string
 	inputString:=""
 	for i:=1; i<len(os.Args);i++{
 		inputString+=os.Args[i]
 		inputString+=" "
 	}
 
+fmt.Println(" .```````````````````````````````,")
 
-print(" .```````````````````````````````,")
-//string:=format()
+//Formatting the input string
 mySlice:=format(inputString)
 
-content, _ := ioutil.ReadFile("bat.txt")
-//printf("' %s                        ' \n", string)
 for i:=0;i<len(mySlice);i++{
 	fmt.Printf("|    %s    |\n", mySlice[i])
 }
-fmt.Printf("%s \n",content)
+	bat()
 }
-
 
