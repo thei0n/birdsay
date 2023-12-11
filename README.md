@@ -5,23 +5,27 @@ Nothing serious, just some simple go code.
 
 ## Usage
 
-```
-birdsay some text```
+```birdsay some text```
 
 
 ### Installation (on Linux)
 
 
 ```
-git clone https://github.com/thei0n/batsay```
-``` 
-cd birdsay```
+git clone https://github.com/thei0n/batsay
+```
 
 ``` 
-go build```
+cd birdsay
+```
+
+``` 
+go build
+```
 
 ```
-sudo cp birdsay /usr/local/bin/```
+sudo cp birdsay /usr/local/bin/
+```
 
 ### Known bugs 
 Might give undesired output if the given words are too short.
